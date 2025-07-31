@@ -345,13 +345,6 @@ body {
     padding-left: 2rem;
 }
 
-.checklist li::before {
-    content: '✨';
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
-}
-
 .romantic-note {
     background: #f8f9fa;
     padding: 1.5rem;
