@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐝 Convite Especial - Natsumi Sushi 🍣</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Tela inicial -->
+        <div class="screen" id="welcome-screen">
+            <div class="honeycomb-bg"></div>
+            <div class="content">
+                <div class="bee-container">
+                    <div class="bee">
+                        <div class="bee-body"></div>
+                        <div class="bee-wings">
+                            <div class="wing wing-left"></div>
+                            <div class="wing wing-right"></div>
+                        </div>
+                        <div class="bee-stinger"></div>
+                    </div>
+                </div>
+                <h1 class="title">🐝 Um Convite Especial 🐝</h1>
+                <p class="subtitle">Clique na abelhinha para descobrir!</p>
+                <button class="cta-button" onclick="showInvitation()">
+                    <span>🐝</span> Clique aqui!
+                </button>
+            </div>
+        </div>
+
+        <!-- Tela do convite -->
+        <div class="screen hidden" id="invitation-screen">
+            <div class="honeycomb-bg"></div>
+            <div class="content">
+                <div class="invitation-card">
+                    <div class="card-header">
+                        <h2>🍣 Convite para um Date Especial 🍣</h2>
+                        <div class="decorative-bees">
+                            <span>🐝</span>
+                            <span>🐝</span>
+                            <span>🐝</span>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="date-info">
+                            <h3>📅 Quando?</h3>
+                            <p class="highlight">Quarta-feira às 19h</p>
+                        </div>
+
+                        <div class="location-info">
+                            <h3>📍 Onde?</h3>
+                            <p class="highlight">Natsumi Sushi</p>
+                            <p class="description">O melhor sushi da cidade! 🍱</p>
+                        </div>
+
+                        <div class="plan-info">
+                            <h3>🚗 Como vai ser?</h3>
+                            <p>Eu vou te buscar na sua casa! Você só precisa:</p>
+                            <ul class="checklist">
+                                <li>✨ Vestir uma roupa bonita</li>
+                                <li>😊 Estar pronta para se divertir</li>
+                                <li>🍣 Aproveitar comida deliciosa</li>
+                            </ul>
+                        </div>
+
+                        <div class="romantic-note">
+                            <p class="note">"Como uma abelha busca o mel mais doce, eu busco os momentos mais especiais
+                                com você! 🐝💕"</p>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="response-button yes" onclick="respond('yes')">
+                            <span>💕</span> Sim, eu aceito!
+                        </button>
+                        <button class="response-button maybe" onclick="respond('maybe')">
+                            <span>🤔</span> Deixa eu pensar...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de resposta positiva -->
+        <div class="screen hidden" id="yes-screen">
+            <div class="honeycomb-bg"></div>
+            <div class="content">
+                <div class="celebration">
+                    <div class="confetti-container"></div>
+                    <h2>🎉 Yay! 🎉</h2>
+                    <p class="celebration-text">Estou super feliz que você aceitou!</p>
+                    <div class="countdown">
+                        <h3>⏰ Contagem regressiva:</h3>
+                        <div id="countdown-timer"></div>
+                    </div>
+                    <div class="final-message">
+                        <p>Vou te buscar na quarta-feira às 19h!</p>
+                        <p>Prepare-se para uma noite incrível! 💕</p>
+                    </div>
+                    <button class="restart-button" onclick="restart()">
+                        <span>🔄</span> Ver novamente
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de resposta "pensando" -->
+        <div class="screen hidden" id="maybe-screen">
+            <div class="honeycomb-bg"></div>
+            <div class="content">
+                <div class="thinking">
+                    <h2>🤔 Hmm...</h2>
+                    <p>Ok, vou te dar mais motivos para aceitar:</p>
+                    <div class="reasons">
+                        <div class="reason">
+                            <span>🍣</span>
+                            <p>Sushi fresco e delicioso</p>
+                        </div>
+                        <div class="reason">
+                            <span>💕</span>
+                            <p>Minha companhia (hehe)</p>
+                        </div>
+                        <div class="reason">
+                            <span>🎵</span>
+                            <p>Conversas divertidas</p>
+                        </div>
+                        <div class="reason">
+                            <span>🌟</span>
+                            <p>Uma noite especial</p>
+                        </div>
+                    </div>
+                    <p class="persuasion">E aí, mudou de ideia? 😊</p>
+                    <div class="final-buttons">
+                        <button class="response-button yes" onclick="respond('yes')">
+                            <span>💕</span> Ok, aceito!
+                        </button>
+                        <button class="response-button no" onclick="respond('no')">
+                            <span>😢</span> Ainda não...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de resposta negativa -->
+        <div class="screen hidden" id="no-screen">
+            <div class="honeycomb-bg"></div>
+            <div class="content">
+                <div class="sad">
+                    <h2>😢</h2>
+                    <p>Ok, entendo... Mas não desisto fácil!</p>
+                    <p class="retry-message">Talvez outro dia? 🥺</p>
+                    <button class="restart-button" onclick="restart()">
+                        <span>🔄</span> Tentar novamente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
