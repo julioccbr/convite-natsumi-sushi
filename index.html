@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🐝 Convite Especial - Natsumi Sushi 🍣</title>
     <link rel="stylesheet" href="styles.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -68,6 +66,7 @@
                                 <li>✨ Vestir uma roupa bonita</li>
                                 <li>😊 Estar pronta para se divertir</li>
                                 <li>🍣 Aproveitar comida deliciosa</li>
+                                <li>🐱 Depois vamos pra sua casa pra eu conhecer os gatos!</li>
                             </ul>
                         </div>
 
@@ -162,6 +161,29 @@
                         <span>🔄</span> Tentar novamente
                     </button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de persuasão -->
+    <div id="persuasion-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🤔 Espere um momento...</h3>
+            </div>
+            <div class="modal-body">
+                <p>Você tem certeza que quer recusar?</p>
+                <p>Pense bem... Sushi delicioso, minha companhia, e ainda por cima você vai me apresentar aos seus
+                    gatos! 🐱</p>
+                <p>Isso é uma oportunidade única! 😊</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button yes" onclick="closeModalAndAccept()">
+                    <span>💕</span> Ok, você me convenceu!
+                </button>
+                <button class="modal-button no" onclick="closeModal()">
+                    <span>😢</span> Ainda não...
+                </button>
             </div>
         </div>
     </div>

@@ -22,10 +22,29 @@ function respond(answer) {
         invitationScreen.classList.add('hidden');
         maybeScreen.classList.remove('hidden');
     } else if (answer === 'no') {
-        invitationScreen.classList.add('hidden');
-        maybeScreen.classList.add('hidden');
-        document.getElementById('no-screen').classList.remove('hidden');
+        // Mostrar modal de persuasão em vez de ir direto para a tela triste
+        showPersuasionModal();
     }
+}
+
+// Função para mostrar modal de persuasão
+function showPersuasionModal() {
+    document.getElementById('persuasion-modal').classList.remove('hidden');
+}
+
+// Função para fechar modal e aceitar
+function closeModalAndAccept() {
+    document.getElementById('persuasion-modal').classList.add('hidden');
+    document.getElementById('invitation-screen').classList.add('hidden');
+    document.getElementById('maybe-screen').classList.add('hidden');
+    document.getElementById('yes-screen').classList.remove('hidden');
+    createConfetti();
+    startCountdown();
+}
+
+// Função para fechar modal
+function closeModal() {
+    document.getElementById('persuasion-modal').classList.add('hidden');
 }
 
 // Função para criar confetti
