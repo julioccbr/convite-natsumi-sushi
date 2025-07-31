@@ -14,7 +14,9 @@ function respond(answer) {
     const maybeScreen = document.getElementById('maybe-screen');
 
     if (answer === 'yes') {
+        // Esconder todas as telas primeiro
         invitationScreen.classList.add('hidden');
+        maybeScreen.classList.add('hidden');
         document.getElementById('yes-screen').classList.remove('hidden');
         createConfetti();
         startCountdown();
@@ -141,31 +143,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const reasons = document.querySelectorAll('.reason');
     reasons.forEach(reason => {
         reason.addEventListener('mouseenter', function () {
-            this.style.transform = 'translateY(-10px) scale(1.05)';
+            this.style.transform = 'translateY(-10px)';
         });
 
         reason.addEventListener('mouseleave', function () {
-            this.style.transform = 'translateY(0) scale(1)';
+            this.style.transform = 'translateY(0)';
         });
     });
-
-    // Efeito de digitação no título
-    const title = document.querySelector('.title');
-    if (title) {
-        const originalText = title.textContent;
-        title.textContent = '';
-        let i = 0;
-
-        function typeWriter() {
-            if (i < originalText.length) {
-                title.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-
-        setTimeout(typeWriter, 1000);
-    }
 });
 
 // Adicionar sons de efeito (opcional)
